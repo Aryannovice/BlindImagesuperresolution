@@ -78,3 +78,47 @@ run_inference_on_folder(
 
 Generated HR images and logs will be written to `results/`.
 
+### Git setup and push to an existing repository
+
+Use these commands from this project folder (not from your home directory):
+
+```bash
+cd "C:/Users/AYUSH/Desktop/College/ProjectPhase/agentic_ai_final code"
+git rev-parse --show-toplevel
+```
+
+If needed, initialize Git and make the first commit:
+
+```bash
+git init
+git branch -M main
+git add .
+git commit -m "Initial project import with documentation"
+```
+
+Connect your existing remote repository:
+
+```bash
+git remote add origin <REPO_URL>
+git remote -v
+```
+
+If the remote already has commits, merge histories first:
+
+```bash
+git pull origin main --allow-unrelated-histories
+```
+
+Then push:
+
+```bash
+git push -u origin main
+```
+
+Useful checks before pushing:
+
+```bash
+git status
+git ls-files | Select-String -Pattern "\.env|\.venv|node_modules|__pycache__|\.cursor"
+```
+
